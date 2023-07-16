@@ -1,5 +1,7 @@
 {
-    "json_type": "kernel_doc",
+    "doc_type": "kernel",
+    "doc_name": "process",
+    "doc_path": ["kernel", "process"],
     "reported_cfiles": [
         ["kernel", "process.c"],
         ["kpart", "switch.asm"]
