@@ -7,10 +7,6 @@ body {
     margin-bottom: 150px;
 }
 
-h1 {
-    color: #fff;
-}
-
 .div_center {
     max-width: 800px;
     margin: 0 auto;
@@ -31,12 +27,18 @@ table {
 #info_table {
     text-align: left;
     vertical-align: top;
-    border: 1px solid #ff0000;
     width: 100%;
 }
 
+#info_table a {
+    color: #a8a8a8;
+}
+
+#info_table br {
+    margin: 10px 0;
+}
+
 #img_table {
-    border: 1px solid #2f00ff;
     text-align: right;
 }
 

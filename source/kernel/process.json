@@ -1,5 +1,5 @@
 {
-    "doc_type": "kernel",
+    "doc_type": "generic kernel",
     "doc_name": "process",
     "doc_path": ["kernel", "process"],
     "reported_cfiles": [

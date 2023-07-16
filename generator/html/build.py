@@ -19,16 +19,39 @@ def get_template():
     return template
 
 def generate_repdict(data):
+    if data["doc_type"] != "generic kernel":
+        print("Error: this script only works for generic kernel documentation")
+        exit(1)
+
     path_links = ""
     for i, l in enumerate(data["doc_path"]):
-            full = "/".join(data["doc_path"][:i+1])
-            if i == len(data["doc_path"]) - 1:
-                path_links += f'<a href="/{full}.html">{l}</a>'
-            else:
-                path_links += f'<a href="/{full}">{l}</a> / '
+        full = "/".join(data["doc_path"][:i+1])
+        if i == len(data["doc_path"]) - 1:
+            path_links += f'<a href="/{full}.html">{l}</a>'
+        else:
+            path_links += f'<a href="/{full}">{l}</a> / '
+    
+    cfiles = ""
+    for i, ary in enumerate(data["reported_cfiles"]):
+        file = "/".join(ary)
+        cfiles += f"<a href=\"https://github.com/elydre/profanOS/blob/main/{file}\">{file}</a>"
+        if i != len(data["reported_cfiles"]) - 1:
+            cfiles += ", "
+    
+    hfiles = ""
+    for ary in data["reported_hfiles"]:
+        file = "/".join(ary)
+        hfiles += f"<a href=\"https://github.com/elydre/profanOS/blob/main/include/kernel/{file}\">{file}</a>"
 
     return {
         "NAME": data["doc_name"],
+        "TYPE": data["doc_type"],
+        "DESCRIPTION": data["summary"],
+        "C_FILES": cfiles,
+        "H_FILES": hfiles,
+        "SCR_PLUR": "s" if len(data["doc_path"]) > 1 else "",
+        "HDR_PLUR": "s" if len(data["reported_hfiles"]) > 1 else "",
+        "VERSION": data["version"],
         "PATH_LINKS": path_links,
     }
 
