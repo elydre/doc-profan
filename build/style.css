@@ -1,5 +1,5 @@
 body {
-    background-color: #202020;
+    background-color: #18181b;
     color: #ffe;
     font-family: Verdana, Tahoma, sans-serif;
     justify-content: space-between;
@@ -19,7 +19,7 @@ h1 {
 }
 
 a {
-    color: #e1d600;
+    color: #bf1844;
     text-decoration: none;
 }
 
@@ -87,12 +87,12 @@ li {
 }
 
 .menu a:hover {
-    color: #ffe843;
+    color: #bf1844;
 }
 
 
 header {
-    background-color: rgb(42, 42, 42, 0.4);
+    background-color: rgba(33, 31, 37, 0.4);
     position: fixed;
     width: 100%;
     height: 60px;
