@@ -43,6 +43,12 @@ def generate_repdict(data):
         file = "/".join(ary)
         hfiles += f"<a href=\"https://github.com/elydre/profanOS/blob/main/include/kernel/{file}\">{file}</a>"
 
+    releases = ""
+    for i, release in enumerate(data["main_updates"]):
+        releases += f"<b>{release['version']}</b> ({release['date']}) <dd> - {release['main_add']} </dd>"
+        if i != len(data["main_updates"]) - 1:
+            releases += "<br>"
+
     return {
         "NAME": data["doc_name"],
         "TYPE": data["doc_type"],
@@ -53,6 +59,8 @@ def generate_repdict(data):
         "HDR_PLUR": "s" if len(data["reported_hfiles"]) > 1 else "",
         "VERSION": data["version"],
         "PATH_LINKS": path_links,
+        "MAIN_TEXT": data["text"],
+        "RELEASES": releases
     }
 
 def generate_html(template, repdict):

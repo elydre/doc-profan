@@ -15,7 +15,8 @@ body {
 }
 
 a {
-    color: #bf1844;
+    color: #a8a8a8;
+    transition: all 0.2s;
     text-decoration: none;
 }
 
@@ -28,10 +29,6 @@ table {
     text-align: left;
     vertical-align: top;
     width: 100%;
-}
-
-#info_table a {
-    color: #a8a8a8;
 }
 
 #info_table br {
@@ -98,7 +95,7 @@ li {
     transition: all 0.2s;         /* Ajout des effets de transition */
 }
 
-.menu a:hover {
+a:hover {
     color: #bf1844;
 }
 
