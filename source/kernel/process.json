@@ -1,0 +1,53 @@
+{
+    "json_type": "kernel_doc",
+    "reported_cfiles": [
+        ["kernel", "process.c"],
+        ["kpart", "switch.asm"]
+    ],
+    "reported_hfiles": [
+        ["kernel", "process.h"]
+    ],
+    "summary": "The process manager is responsible for process creation, scheduling, and termination.",
+    "version": "third writing",
+    "main_updates": [
+        {
+            "version": "generic 0.1.1",
+            "date": "aug 2022",
+            "main_add": "Added the task manager"
+        },
+        {
+            "version": "generic 0.10.1",
+            "date": "jan 2023",
+            "main_add": "Added the process manager"
+        },
+        {
+            "version": "generic 0.11.1",
+            "date": "feb 2023",
+            "main_add": "Idle process & work time"
+        }
+    ],
+    "text": "...",
+    "functions": [
+        {
+            "name": "process_create",
+            "summary": "Creates a new process.",
+            "parameters": [
+                {
+                    "name": "func",
+                    "type": "void (*)()",
+                    "summary": "The entry point of the process."
+                },
+                {
+                    "name": "name",
+                    "type": "char *",
+                    "summary": "The name of the process."
+                }
+            ],
+            "returns": {
+                "type": "int",
+                "summary": "The PID of the process."
+            },
+            "syscall": "c_process_create"
+        }
+    ]
+}
