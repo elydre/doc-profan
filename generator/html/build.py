@@ -19,12 +19,13 @@ def get_template():
     return template
 
 def generate_repdict(data):
-    path_links = "".join(
-        f'<a href="/{l}.html">{l}</a>'
-        if i == len(data["doc_path"]) - 1
-        else f'<a href="/{l}">{l}</a> / '
-        for i, l in enumerate(data["doc_path"])
-    )
+    path_links = ""
+    for i, l in enumerate(data["doc_path"]):
+            full = "/".join(data["doc_path"][:i+1])
+            if i == len(data["doc_path"]) - 1:
+                path_links += f'<a href="/{full}.html">{l}</a>'
+            else:
+                path_links += f'<a href="/{full}">{l}</a> / '
 
     return {
         "NAME": data["doc_name"],
