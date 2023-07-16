@@ -14,8 +14,8 @@ h1 {
 .div_center {
     max-width: 800px;
     margin: 0 auto;
+    padding: 40px 20px;
     position: relative;
-    padding: 0 20px;
 }
 
 a {
@@ -28,10 +28,20 @@ table {
     width: 100%;
 }
 
-th, td {
-    padding: 8px;
+#info_table {
     text-align: left;
-    border-bottom: 1px solid #888;
+    vertical-align: top;
+    border: 1px solid #ff0000;
+    width: 100%;
+}
+
+#img_table {
+    border: 1px solid #2f00ff;
+    text-align: right;
+}
+
+#profan_img {
+    width: 150px;
 }
 
 .big_logo {
